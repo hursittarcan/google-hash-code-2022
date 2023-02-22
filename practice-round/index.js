@@ -33,15 +33,12 @@ for (let i = 0; i < potential_customers * 2; i++) {
             all_disliked_ingredients.push(splitted_disliked_ingredients[i]);
         }
     }
-
-    console.log("customer: " )
-    console.log("------------------------------------")
-    console.log("Likes: " + liked_ingredients);
-    console.log("Dislikes: " + disliked_ingredients);
-    console.log("------------------------------------")
     i++
-    console.log()
 }
+
+all_liked_ingredients = [...new Set(all_liked_ingredients)];
+all_disliked_ingredients = [...new Set(all_disliked_ingredients)];
+
 console.log("All liked ingredients: " + all_liked_ingredients);
 console.log("All disliked ingredients: " + all_disliked_ingredients);
 

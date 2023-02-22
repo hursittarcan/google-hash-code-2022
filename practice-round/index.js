@@ -12,12 +12,29 @@ let potential_customers = input[0].toString();
 console.log("Potential customers: " + potential_customers);
 console.log()
 
+let all_liked_ingredients = [];
+let all_disliked_ingredients = [];
+
 for (let i = 0; i < potential_customers * 2; i++) {
-    //let liked_ingredients = input[i];
+
+    let liked_ingredients = input[i + 1];
+    let disliked_ingredients = input[i+2];
+
+    const splitted_liked_ingredients = liked_ingredients.split(" ");
+    let amount_of_liked_ingedients = splitted_liked_ingredients[0];
+    for (let i = 1; i <= amount_of_liked_ingedients; i++) {
+        all_liked_ingredients.push(splitted_liked_ingredients[i]);
+    }
+
+
+
     console.log("customer: " )
-    console.log("Likes: " + input[i+1]);
-    console.log("Dislikes: " + input[i+2]);
+    console.log("------------------------------------")
+    console.log("Likes: " + liked_ingredients);
+    console.log("Dislikes: " + disliked_ingredients);
+    console.log("------------------------------------")
     i++
     console.log()
 }
+console.log("All liked ingredients: " + all_liked_ingredients);
 

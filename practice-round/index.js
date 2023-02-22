@@ -9,9 +9,6 @@ let input = readFile('sample.txt');
 
 let potential_customers = input[0].toString();
 
-console.log("Potential customers: " + potential_customers);
-console.log()
-
 let all_liked_ingredients = [];
 let all_disliked_ingredients = [];
 
@@ -39,6 +36,14 @@ for (let i = 0; i < potential_customers * 2; i++) {
 all_liked_ingredients = [...new Set(all_liked_ingredients)];
 all_disliked_ingredients = [...new Set(all_disliked_ingredients)];
 
-console.log("All liked ingredients: " + all_liked_ingredients);
-console.log("All disliked ingredients: " + all_disliked_ingredients);
+for (let i = 0; i < all_disliked_ingredients.length; i++) {
+    if (all_liked_ingredients.includes(all_disliked_ingredients[i])) {
+        let remove_ingredient = all_disliked_ingredients[i];
+        all_liked_ingredients = all_liked_ingredients.filter((element) => element !== remove_ingredient);
+    }
+}
+
+let final_string = all_liked_ingredients.length + " " + all_liked_ingredients.toString();
+
+console.log(final_string.replace(/,/g, " "));
 

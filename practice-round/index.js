@@ -5,7 +5,7 @@ function readFile(filename) {
     return contents.split(/\r?\n/);
 }
 
-let input = readFile('data_d.txt');
+let input = readFile('./data/data_b.txt');
 
 let potential_customers = input[0].toString();
 
